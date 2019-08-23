@@ -8,7 +8,7 @@ default_savedir = "screencaps"
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Download screencaps from insecam')
-    parser.add_argument("video_address", type=str, help="url of the livestream, ending in .mjpg")
+    parser.add_argument("video_address", type=str, help="url of the livestream")
     parser.add_argument("download_interval", type=int, help="how many seconds between each screencap")
 
     args = parser.parse_args()
