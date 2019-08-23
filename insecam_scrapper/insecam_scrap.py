@@ -23,7 +23,6 @@ if __name__ == "__main__":
         try:
             cap = cv2.VideoCapture(args.video_address)
             ret, frame = cap.read()
-            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
             img_path = os.path.join(default_savedir, "image_{}.png".format(img_counter))
             cv2.imwrite(img_path, frame)
