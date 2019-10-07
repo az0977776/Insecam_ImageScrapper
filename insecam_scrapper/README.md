@@ -6,7 +6,7 @@ to install dependencies run:
 
 to run the scrapper:
 
-`python insecam_scrap.py <insecam livestream url> <frequency>`
+`python insecam_scrap.py <name for stream> <insecam livestream url> <frequency> <limit>`
 
 or 
 
@@ -20,25 +20,25 @@ right click on stream and open image in new tab for the url. ^C to stop the down
 
 temporary workflow:
 
+create a t2.micro or whatever instance size.
+
 scp scrapper files to instance:
 
 `scp -i <permission file> -r <insecam folder> ec2-user@<instance address>:~`
 
 ssh to instance:
+
 `ssh -i <permission file> ec2-user@<instance address>`
 
 get pip:
 
 `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
-`python get-pip.py`
+
+`python get-pip.py --user`
 
 install dependencies to user:
 
 `pip install --user -r requirements.txt`
-
-need this version of opencv:
-
-`pip install opencv-python-headless --user`
 
 run insecam_scrapper
 
