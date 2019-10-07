@@ -30,15 +30,12 @@ ssh to instance:
 get pip:
 
 `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
-`python get-pip.py`
+
+`python get-pip.py --user`
 
 install dependencies to user:
 
 `pip install --user -r requirements.txt`
-
-need this version of opencv:
-
-`pip install opencv-python-headless --user`
 
 run insecam_scrapper
 
