@@ -10,6 +10,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Download screencaps from insecam')
     parser.add_argument("video_address", type=str, help="url of the livestream")
     parser.add_argument("download_interval", type=int, help="how many seconds between each screencap")
+    parser.add_argument("limit", type=int, help="how many screencaps to take")
 
     args = parser.parse_args()
     print("Downloading screencaps from livestream at {} at 1 frame every {} seconds".format(args.video_address, args.download_interval))
@@ -21,6 +22,8 @@ if __name__ == "__main__":
     img_counter = 0
     while True:
         try:
+            if img_counter >= args.limit:
+                break
             cap = cv2.VideoCapture(args.video_address)
             ret, frame = cap.read()
 
