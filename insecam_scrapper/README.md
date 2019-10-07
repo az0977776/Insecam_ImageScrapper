@@ -20,11 +20,14 @@ right click on stream and open image in new tab for the url. ^C to stop the down
 
 temporary workflow:
 
+create a t2.micro or whatever instance size.
+
 scp scrapper files to instance:
 
 `scp -i <permission file> -r <insecam folder> ec2-user@<instance address>:~`
 
 ssh to instance:
+
 `ssh -i <permission file> ec2-user@<instance address>`
 
 get pip:
