@@ -6,7 +6,7 @@ to install dependencies run:
 
 to run the scrapper:
 
-`python insecam_scrap.py <insecam livestream url> <frequency>`
+`python insecam_scrap.py <name for stream> <insecam livestream url> <frequency> <limit>`
 
 or 
 
