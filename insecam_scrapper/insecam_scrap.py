@@ -16,11 +16,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
     print("Downloading {} screencaps from livestream at {} at 1 frame every {} seconds".format(args.limit, args.video_address, args.download_interval))
 
-    save_pave = os.path.join(default_savedir, args.stream_name)
+    save_path = os.path.join(default_savedir, args.stream_name)
 
-    # creating the save diregsctory if not exist
-    if not os.path.exists(save_pave):
-        os.makedirs(save_pave)
+    # creating the save directory if not exist
+    if not os.path.exists(save_path):
+        os.makedirs(save_path)
 
     img_counter = 0
     while True:
