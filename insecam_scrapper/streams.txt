@@ -1,3 +1,4 @@
-fabric_shop,http://120.50.14.3/img/video.mjpeg,3,4
-factory,http://89.135.122.113:83/img/video.mjpeg,6,2
-clothes_shop,http://120.50.0.21/img/video.mjpeg,2,6
+fabric_shop,http://120.50.14.3/img/video.mjpeg,30,30
+factory,http://89.135.122.113:83/img/video.mjpeg,30,30
+clothes_shop,http://120.50.0.21/img/video.mjpeg,30,30
+small_shop,http://216.239.175.35:8090/cgi-bin/camera?resolution=640&amp;quality=1&amp;Language=0&amp;1578595320,30,30

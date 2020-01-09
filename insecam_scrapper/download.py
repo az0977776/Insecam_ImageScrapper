@@ -4,22 +4,25 @@ import time
 import argparse
 import os
 import sys
+import datetime
 import multiprocessing
 
 from insecam_scrap import default_savedir
 
 class StreamDownloader:
-    def __init__(self, name, url, interval, limit):
+    def __init__(self, name, url, interval, limit, relative_time, start_hour, end_hour):
         self.name = name
         self.url = url
         self.interval = float(interval)
         self.limit = int(limit)
         self.save_path = os.path.join(default_savedir, name)
-
+        self.relative_time = int(relative_time)
+        self.start_hour = int(start_hour)
+        self.end_hour = int(end_hour)
     
     def __str__(self):
-        return "[StreamDownloader] name:{}, url:{}, interval:{}, limit:{}".format(
-            self.name, self.url, self.interval, self.limit
+        return "[StreamDownloader] name:{}, url:{}, interval:{}, limit:{}, relative:{}, start:{}, end:{}".format(
+            self.name, self.url, self.interval, self.limit, self.relative_time, self.start_hour, self.end_hour
         )
     
     def download(self):
@@ -31,6 +34,13 @@ class StreamDownloader:
 
         img_counter = 0
         while img_counter < self.limit:
+            time.sleep(self.interval)
+            current_hour = (datetime.datetime.now().hour + self.relative_time) % 24
+            if current_hour < self.start_hour:
+                continue
+            if current_hour > self.end_hour:
+                continue
+
             cap = cv2.VideoCapture(self.url)
             ret, frame = cap.read()
 
@@ -38,7 +48,6 @@ class StreamDownloader:
             cv2.imwrite(img_path, frame)
             # print("saved image {} to {}".format(img_counter, img_path))
             img_counter += 1
-            time.sleep(self.interval)
         print("finished downloading: {}".format(self.name))
 
 
