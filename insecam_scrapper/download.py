@@ -81,4 +81,3 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         for j in jobs:
             j.terminate()
-            j.join()

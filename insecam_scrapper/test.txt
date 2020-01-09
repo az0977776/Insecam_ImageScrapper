@@ -1,5 +1,4 @@
 Lumber mill,http://68.116.13.142:82/mjpg/video.mjpg,5,5,-8,9,17
 Coffee shop,http://64.21.233.218:8001/mjpg/video.mjpg,5,5,-5,8,16
 Food stand,http://212.47.24.208:83/mjpg/video.mjpg,5,5,2,8,17
-Bar,http://212.186.68.38:1082/-wvhttp-01-/GetOneShot?image_size=640x480&frame_count=1000000000,5,5,1,20,2
 Restaurant Counter,http://109.168.45.205:84/mjpg/video.mjpg,5,5,1,17,22
