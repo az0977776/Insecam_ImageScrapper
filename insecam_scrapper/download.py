@@ -35,7 +35,7 @@ class StreamDownloader:
         img_counter = 0
         while img_counter < self.limit:
             time.sleep(self.interval)
-            current_hour = (datetime.datetime.now().hour + self.relative_time) % 24
+            current_hour = (datetime.datetime.utcnow().hour + self.relative_time) % 24
             if current_hour < self.start_hour:
                 continue
             if current_hour > self.end_hour:
