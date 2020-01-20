@@ -44,9 +44,10 @@ class StreamDownloader:
             cap = cv2.VideoCapture(self.url)
             ret, frame = cap.read()
 
-            img_path = os.path.join(self.save_path, "{}_{}.png".format(hash(self.name), hash(datetime.datetime.utcnow())))
+            #img_name = "{}_{}.png".format(self.name, time.time())
+            img_name = "{}_{}.png".format(hash(self.name), hash(datetime.datetime.utcnow()))
+            img_path = os.path.join(self.save_path, img_name)
             cv2.imwrite(img_path, frame)
-            # print("saved image {} to {}".format(img_counter, img_path))
             img_counter += 1
         print("finished downloading: {}".format(self.name))
 
