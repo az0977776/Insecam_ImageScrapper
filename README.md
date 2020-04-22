@@ -1,1 +1,1 @@
-# HuskyWatch
+# Image scrapper for insecam
